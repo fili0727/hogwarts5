@@ -77,12 +77,14 @@ public class StudentService {
         studentEntity.getFirstName(),
         studentEntity.getMiddleName(),
         studentEntity.getLastName(),
+        studentEntity.getFullName(),
         studentEntity.getHouse().getName(),
         studentEntity.getSchoolYear()
     );
 
     return dto;
   }
+
 
   private Student fromDTO(StudentRequestDTO studentDTO) {
     Student entity = new Student(
@@ -92,6 +94,10 @@ public class StudentService {
         houseService.findById(studentDTO.house()).orElseThrow(),
         studentDTO.schoolYear()
     );
+
+    if(studentDTO.name()!= null){
+      entity.setFullName(studentDTO.name());
+    }
 
     return entity;
   }
