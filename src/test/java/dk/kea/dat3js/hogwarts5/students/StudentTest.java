@@ -75,6 +75,38 @@ class StudentTest {
     }
 
     @Test
+    void setFullNameWithMultipleMiddleNames(){
+        // arrange
+        Student student = new Student("first", "middle", "last", null, 1);
+
+        // act
+        student.setFirstName("Harry");
+        student.setMiddleName("James Sirius");
+        student.setLastName("Potter");
+
+        //assert
+        assertEquals("Harry", student.getFirstName());
+        assertEquals("James Sirius", student.getMiddleName());
+        assertEquals("Potter", student.getLastName());
+    }
+
+    @Test
+    void setFullNameWithEmptyString(){
+        // arrange
+        Student student = new Student("first", "middle", "last", null, 1);
+
+        // act
+        student.setFirstName("");
+        student.setMiddleName("");
+        student.setLastName("");
+
+        //assert
+        assertEquals("", student.getFirstName());
+        assertEquals("", student.getMiddleName());
+        assertEquals("", student.getLastName());
+    }
+
+    @Test
     void setFullNameWithFirstAndLastNameIsNull(){
         // arrange
         Student student = new Student(null, "middle", null, null, 1);
@@ -87,6 +119,7 @@ class StudentTest {
         assertEquals("James", student.getMiddleName());
         assertNull(student.getLastName());
     }
+
 
     @Test
     void capitalizeIndividualNames(){
@@ -102,6 +135,20 @@ class StudentTest {
         assertEquals("Harry", student.getFirstName());
         assertEquals("James", student.getMiddleName());
         assertEquals("Potter", student.getLastName());
+    }
+
+    @Test
+    void setFullNameWithNull(){
+        // arrange
+        Student student = new Student("First", "Middle", "Last", null, 1);
+
+        // act
+        student.setFullName(null);
+
+        //assert
+        assertEquals("First", student.getFirstName());
+        assertEquals("Middle", student.getMiddleName());
+        assertEquals("Last", student.getLastName());
     }
 
     @Test
