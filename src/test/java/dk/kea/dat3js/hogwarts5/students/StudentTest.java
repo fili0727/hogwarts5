@@ -46,21 +46,6 @@ class StudentTest {
     }
 
     @Test
-    void setFullNameWithoutMiddleName() {
-        // arrange
-        Student student = new Student("first", null, "last", null, 1);
-
-        // act
-        student.setFirstName("Harry");
-        student.setLastName("Potter");
-
-        //assert
-        assertEquals("Harry", student.getFirstName());
-        assertNull(student.getMiddleName());
-        assertEquals("Potter", student.getLastName());
-    }
-
-    @Test
     void setFullNameWithMiddleNameAndMiddleNameIsNull() {
         // arrange
         Student student = new Student("first", null, null, null, 1);
@@ -72,6 +57,20 @@ class StudentTest {
         assertEquals("Harry", student.getFirstName());
         assertNull(student.getMiddleName());
         assertNull(student.getLastName());
+    }
+
+    @Test
+    void setFullNameWithoutMiddleName(){
+        // arrange
+        Student student = new Student("first", "middle", "last", null, 1);
+
+        // act
+        student.setFullName("Harry Potter");
+
+        //assert
+        assertEquals("Harry", student.getFirstName());
+        assertNull( student.getMiddleName());
+        assertEquals("Potter", student.getLastName());
     }
 
     @Test
