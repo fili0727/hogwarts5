@@ -18,20 +18,22 @@ public class Student implements PersonWithNames {
   @ManyToOne
   private House house;
   private Integer schoolYear; // 1-7
+  private boolean prefect;
 
   public Student() {
   }
 
   public Student(String firstName, String lastName, House house, int schoolYear) {
-    this(firstName, null, lastName, house, schoolYear);
+    this(firstName, null, lastName, house, schoolYear, false);
   }
 
-  public Student(String firstName, String middleName, String lastName, House house, int schoolYear) {
+  public Student(String firstName, String middleName, String lastName, House house, int schoolYear, boolean prefect) {
     this.firstName = firstName;
     this.middleName = middleName;
     this.lastName = lastName;
     this.house = house;
     this.schoolYear = schoolYear;
+    this.prefect = prefect;
   }
 
   public int getId() {
@@ -80,6 +82,14 @@ public class Student implements PersonWithNames {
 
   public void setSchoolYear(Integer schoolYear) {
     this.schoolYear = schoolYear;
+  }
+
+  public boolean isPrefect() {
+    return prefect;
+  }
+
+  public void setPrefect(boolean prefect) {
+    this.prefect = prefect;
   }
 
   @Override
