@@ -19,21 +19,23 @@ public class Student implements PersonWithNames {
   private House house;
   private Integer schoolYear; // 1-7
   private boolean prefect;
+  private boolean isMale;
 
   public Student() {
   }
 
   public Student(String firstName, String lastName, House house, int schoolYear) {
-    this(firstName, null, lastName, house, schoolYear, false);
+    this(firstName, null, lastName, house, schoolYear, false, false);
   }
 
-  public Student(String firstName, String middleName, String lastName, House house, int schoolYear, boolean prefect) {
+  public Student(String firstName, String middleName, String lastName, House house, int schoolYear, boolean prefect, boolean isMale) {
     this.firstName = firstName;
     this.middleName = middleName;
     this.lastName = lastName;
     this.house = house;
     this.schoolYear = schoolYear;
     this.prefect = prefect;
+    this.isMale = isMale;
   }
 
   public int getId() {
@@ -88,9 +90,22 @@ public class Student implements PersonWithNames {
     return prefect;
   }
 
-  public void setPrefect(boolean prefect) {
-    this.prefect = prefect;
-  }
+
+    public void setPrefect(boolean prefect) {
+      if (schoolYear < 5) {return;}
+
+      this.prefect = prefect;
+    }
+
+
+
+    public boolean isMale() {
+        return isMale;
+    }
+
+    public void setMale(boolean isMale) {
+        this.isMale = isMale;
+    }
 
   @Override
   public boolean equals(Object o) {

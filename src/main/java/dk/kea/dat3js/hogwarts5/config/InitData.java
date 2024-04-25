@@ -41,18 +41,18 @@ public class InitData implements CommandLineRunner {
     Set<Student> existingStudents = new HashSet<>();
     existingStudents.addAll(studentRepository.findAll());
 
-    Student harry = new Student("Harry", "James", "Potter", gryffindor, 5, false);
-    Student hermione = new Student("Hermione", "Jean", "Granger", gryffindor, 5, false);
-    Student ron = new Student("Ron", "Bilius", "Weasley", gryffindor, 5, false);
-    Student neville = new Student("Neville", "Frank", "Longbottom", gryffindor, 5, false);
-    Student ginny = new Student("Ginny", "Molly", "Weasley", gryffindor, 5, false);
-    Student fred = new Student("Fred", "Gideon", "Weasley", gryffindor, 5, false);
-    Student george = new Student("George", "Fabian", "Weasley", gryffindor, 5, false);
-    Student percy = new Student("Percy", "Ignatius", "Weasley", gryffindor, 5, false);
+    Student harry = new Student("Harry", "James", "Potter", gryffindor, 5, false, true);
+    Student hermione = new Student("Hermione", "Jean", "Granger", gryffindor, 5, false, false);
+    Student ron = new Student("Ron", "Bilius", "Weasley", gryffindor, 5, false, true);
+    Student neville = new Student("Neville", "Frank", "Longbottom", gryffindor, 5, false, true);
+    Student ginny = new Student("Ginny", "Molly", "Weasley", gryffindor, 5, false, false);
+    Student fred = new Student("Fred", "Gideon", "Weasley", gryffindor, 5, false, true);
+    Student george = new Student("George", "Fabian", "Weasley", gryffindor, 5, false, true);
+    Student percy = new Student("Percy", "Ignatius", "Weasley", gryffindor, 5, false, true);
 
-    Student draco = new Student("Draco", "", "Malfoy", slytherin, 5, false);
-    Student cedric = new Student("Cedric", "", "Diggory", hufflepuff, 6, false);
-    Student luna = new Student("Luna", "", "Lovegood", ravenclaw, 4, false);
+    Student draco = new Student("Draco", "", "Malfoy", slytherin, 5, false, true);
+    Student cedric = new Student("Cedric", "", "Diggory", hufflepuff, 6, false, true);
+    Student luna = new Student("Luna", "", "Lovegood", ravenclaw, 4, false, false);
 
     existingStudents.addAll(List.of(harry, hermione, ron, neville, ginny, fred, george, percy, draco, cedric, luna));
     studentRepository.saveAll(existingStudents);
