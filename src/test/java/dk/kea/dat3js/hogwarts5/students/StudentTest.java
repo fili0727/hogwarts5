@@ -24,6 +24,7 @@ class StudentTest {
         Student student = new Student("Harry","Potter", null, 1);
 
         // act
+
         var fullName = student.getFullName();
 
         //assert
