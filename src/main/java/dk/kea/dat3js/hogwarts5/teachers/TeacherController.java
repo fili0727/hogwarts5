@@ -27,6 +27,7 @@ public class TeacherController {
 
   @PostMapping
   public TeacherResponseDTO createTeacher(@RequestBody TeacherRequestDTO teacher) {
+    System.out.println(teacher);
     return teacherService.save(teacher);
   }
 

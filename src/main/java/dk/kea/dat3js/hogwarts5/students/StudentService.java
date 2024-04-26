@@ -100,8 +100,8 @@ public class StudentService {
 
     );
 
-    if(studentDTO.name()!= null){
-      entity.setFullName(studentDTO.name());
+    if(studentDTO.fullName()!= null){
+      entity.setFullName(studentDTO.fullName());
     }
 
     return entity;
