@@ -3,10 +3,11 @@ package dk.kea.dat3js.hogwarts5.students;
 import dk.kea.dat3js.hogwarts5.common.PersonWithNames;
 import dk.kea.dat3js.hogwarts5.house.House;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 
 import java.util.Objects;
 
-
+@AllArgsConstructor
 @Entity
 public class Student implements PersonWithNames {
   @Id
